@@ -1,0 +1,224 @@
+:root {
+  --primary: #144d29;
+
+  --bg-color: #ffff;
+  --sc-color: #122c1c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: none;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  color: #080808;
+  min-height: 3000px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar Style */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 7%;
+  background-color: var(--bg-color);
+  border-bottom: 1px solid #122c1cc9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-nav a {
+  color: #122c1c;
+  display: inline-block;
+  font-size: 1.5rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: #81810e;
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid #81810e;
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: var(--sc-color);
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: #81810e;
+}
+
+#hamburger-menu {
+  display: none;
+}
+/* tempatibadah.html */
+.hero-tmpt-ibadah {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/tmptbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.hero-tmpt-ibadah::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgb(206, 212, 208) 10%,
+    rgba(255, 255, 255, 0) 25%
+  );
+}
+
+.hero-tmpt-ibadah .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+.hero-tmpt-ibadah .content h1 {
+  font-size: 5em;
+  color: #144d29;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.753);
+  line-height: 1.2;
+}
+
+.hero-tmpt-ibadah .content h1 span {
+  color: #61481c;
+}
+
+.hero-tmpt-ibadah .content p {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #ffff;
+}
+
+/* navbar in tempat ibadah */
+
+.navbar-tmpt-ibadah {
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  padding: 3rem 7% 1rem;
+  align-items: center;
+  position: relative;
+}
+.navbar-tmpt-ibadah a {
+  color: #122c1c;
+  display: inline-block;
+  font-size: 1.5rem;
+  margin: 0 1rem;
+}
+/* Button Download */
+.buddha .table-buddha .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: white;
+  background-color: var(--sc-color);
+  border-radius: 15px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.493);
+}
+
+.buddha .table-buddha .icon{
+    margin-right: 6px;
+}
+
+/* media queris (responsive) */
+/* laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 758px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #94e6b2;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.2s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 1.6rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .contact .row {
+    flex-wrap: wrap;
+  }
+
+  .contact .row .map {
+    height: 30rem;
+  }
+
+  .contact .row form {
+    padding-top: 0;
+  }
+
+  /* handphone */
+  @media (max-width: 450px) {
+    html {
+      font-size: 55%;
+    }
+  }
+}
